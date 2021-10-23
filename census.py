@@ -64,7 +64,7 @@ print(min(census['age'].unique()))
 print(max(census['age'].unique()))
 
 bins = [x for x in range(10, 86, 5)]
-labels = ['10-15','15-20', '20-25', '25-30','30-35', '35-40','40-45', '45-50', '50-55', '55-60', '60-65', '65-70', '70-75', '75-80','80-85']
+labels = ['10-15','16-20', '21-25', '26-30','31-35', '36-40','41-45', '46-50', '51-55', '56-60', '61-65', '66-70', '71-75', '76-80','81-85']
 census['age_group'] = pd.cut(census['age'], bins= bins, labels= labels)
 
 census['age_group'] = pd.Categorical(census['age_group'], labels, ordered= True)

@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 census = pd.read_csv('census_data.csv', index_col=0)
 print(census.head())
@@ -70,3 +72,12 @@ print(census['age_group'].unique())
 
 census['age_group_codes'] = census['age_group'].cat.codes
 print(census.head())
+
+# barplot of age groups in census
+plt.figure(figsize=(10,6))
+sns.countplot(x= 'age_group', data= census)
+plt.title('Age group counts in census', fontsize= 14)
+plt.xlabel('Age group', fontsize= 12)
+plt.ylabel('Counts', fontsize= 12)
+plt.xticks(rotation= 90)
+plt.show()
